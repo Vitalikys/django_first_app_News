@@ -1,0 +1,17 @@
+{% load news_tags %}
+{#  все для Sidebar, on Page Left side ,version.Simple_Tag  #}
+{% get_list_categories as categories %}
+<p>menu by ver.Simple_Tag </p>
+{% for categ in categories %}
+      <a href="{% url 'category' categ.pk %}"
+       class="list-group-item list-group-item-action">{{ categ.title }}</a>
+{% endfor %}
+
+<br>
+<br>
+{# now only for inclusion tag:  #}
+{# можна додавати arg сюди %show_cegories ,arg='any text'% #}
+{%  show_categories %}
+
+
+

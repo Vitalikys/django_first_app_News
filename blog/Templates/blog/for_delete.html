@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block card_news_container %}
+    <h3>👣 Few examples from bootstrap 🌹 </h3>
+    <p>A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
+    <span id="time"> </span>
+    <div class="container col-md-4">
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+             data-bs-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/100/100" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/200/100?grayscale" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="media/123.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="https://picsum.photos/200/100?grayscale"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="1"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/100/100" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/100/100" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="2"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="1"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <h5>Image caps Similar to headers and footers, cards can include top and bottom
+        “image caps”—images at the top or bottom of a card.</h5>
+
+
+    <div class="card mb-3 col-md-6">
+        <img src="https://picsum.photos/300/100?grayscale" class="card-img-top" alt="..Phooto.">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 46 mins ago</small></p>
+        </div>
+    </div>
+{% endblock %}

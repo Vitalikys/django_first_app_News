@@ -1,0 +1,37 @@
+
+{# container  for cycle for each NEW #}
+<div class="col-md-9">
+    {% now "Y-E-d H:i:s" %} <t1>; news count=</t1> {{ news.count }}
+    {% for item in news reversed %}
+        <div class="card mb-3">
+            <div class="card-header">
+                {#                        {{ forloop.counter }} # задає нумерацію#}
+                Category: <a href="{% url 'category' item.category.pk %}"> {{ item.category }}</a>
+            </div>
+            <div class="card-body">
+                <div class="media"> {# цикл if  чи є загружене в новину фото #}
+                    {% if item.photo %}
+                        <img src="{{ item.photo.url }}" title="{{ item.photo.url }}" alt="{{ item.photo.url }}"
+                             width="350" class="mr-3 ">
+                    {% else %}
+                        <img src="https://picsum.photos/id/1011/350/235" title="default_photo" alt="фото заглушка"
+                             width="350" class="mr-3">
+                    {% endif %}
+
+                    <div class=" media-body ">
+                        <h5 class="card-title {% cycle 'text-danger' 'text-success' 'text-warning' %}">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.content |linebreaksbr|truncatewords:35 }}</p>
+        {#  <a href="{% url 'article_detail_url' item.pk %} " class="btn btn-primary">Read more...</a> #}
+                        <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read morе...</a>
+                    </div>
+                </div>
+
+            </div>
+            {#                        # робить різними кольорами текст по черзі, в циклі#}
+
+            <div class="card-footer text-muted">
+                {{ item.created_at|date:"Y-m-d H:i:s" }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
