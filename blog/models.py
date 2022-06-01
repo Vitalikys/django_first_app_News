@@ -1,8 +1,8 @@
 from django.db import models
+from django.urls import reverse
 # all info from:
 # https://www.youtube.com/watch?v=moR7m2-tkxs&list=PLmC7X4gkQWCeyIdLxHZdts-3tkcrxP4-o&index=8&ab_channel=Progercourse
 # Create your models here.
-from django.urls import reverse
 
 
 class News(models.Model):
@@ -13,10 +13,11 @@ class News(models.Model):
     # photo add to different folders /Y +  /m
     photo = models.ImageField(upload_to='photos/%Y/%m/', blank=True)
     is_published  =models.BooleanField(default=True)
-    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
+    category = models.ForeignKey('Category', on_delete=models.PROTECT)
+    views = models.IntegerField(default=0)
 
     def get_absolute_url(self):
-        return reverse('article_detail_url', kwargs={'news_id':self.pk})
+        return reverse('article_detail_url', kwargs={'pk':self.pk})
 
     #  добавляємо щоб в консолі shell можна бачити при визові New.objects.all()
     def __str__(self):

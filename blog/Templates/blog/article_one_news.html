@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %} {{ news_item.title }}{% endblock %}
+{% block title %} {{ object.title }}{% endblock %}
 
 {% block card_news_container %}
-    <h1> {{ news_item.title }} </h1>
-    <p>{{ news_item.content |linebreaksbr }}</p>
-    {% if news_item.photo %}
-        <img src="{{ news_item.photo.url }}" title="{{ news_item.photo.url }}" alt="{{ news_item.photo.url }}"
-             width="350" class="mr-3 col-md-5">
+    <h1> {{ object.title }} </h1>
+    {#news_item - old #object.content - is default for DetailView #}
+    <p>{% if object.photo %}
+        <img src="{{ object.photo.url }}" title="{{ object.photo.url }}" alt="{{ object.photo.url }}"
+        width="350" class="col-md-5 mr-3">
     {% else %}
-        <img src="https://picsum.photos/id/1011/350/235" title="default_photo" alt="фото заглушка"
-             width="350" class="col-md-5 mr-3">
+        <img src="https://picsum.photos/200/200?random=1" title="default_rand_photo" alt="фото заглушка"
+        width="350" class="col-md-5 mr-3">
     {% endif %}
-
+    {{ object.content |linebreaksbr }}</p>
+    <h5> number of views:{{ object.views }}</h5>
 
 {% endblock %}

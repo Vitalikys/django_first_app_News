@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="" />
+    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/blogengine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blogengine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/add_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/add_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/for_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/for_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/list_categor_inclusion_tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/list_categor_inclusion_tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/list_categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/list_categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templatetags/news_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templatetags/news_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogengine/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogengine/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogengine/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/DiscordSetup.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +62,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="28h7YatAKYfABKxEhCSptoWdTVq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../_blog_2021/blogengine_lesson_7_Form, ModelForm - SummerNote" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,12 +239,47 @@
       <workItem from="1652712266143" duration="10284000" />
       <workItem from="1652730346033" duration="6831000" />
       <workItem from="1652776232086" duration="513000" />
-      <workItem from="1652776770960" duration="761000" />
+      <workItem from="1652776770960" duration="1416000" />
+      <workItem from="1652801770432" duration="610000" />
+      <workItem from="1652806326501" duration="2508000" />
+      <workItem from="1653151627767" duration="22000" />
+      <workItem from="1653411191866" duration="1386000" />
+      <workItem from="1653572252669" duration="62000" />
+      <workItem from="1653659282929" duration="8514000" />
+      <workItem from="1653688242018" duration="1323000" />
+      <workItem from="1653689596327" duration="4446000" />
+      <workItem from="1653738510699" duration="847000" />
+      <workItem from="1653761448076" duration="1963000" />
+      <workItem from="1653766227083" duration="16726000" />
+      <workItem from="1653821683019" duration="1555000" />
+      <workItem from="1653827205850" duration="6134000" />
+      <workItem from="1653837691751" duration="3427000" />
+      <workItem from="1653841735575" duration="1184000" />
+      <workItem from="1653843013295" duration="3965000" />
+      <workItem from="1653850810415" duration="6339000" />
+      <workItem from="1653858720265" duration="1241000" />
+      <workItem from="1654075823274" duration="5000" />
+      <workItem from="1654087892016" duration="3223000" />
+      <workItem from="1654092016530" duration="1798000" />
+      <workItem from="1654098967078" duration="2650000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/blogengine$views.coverage" NAME="views Coverage Results" MODIFIED="1651660696160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blogengine" />

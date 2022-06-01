@@ -8,14 +8,14 @@ import re
 class NewsForm(forms.ModelForm):
     class Meta:
         model = News
-        fields = '__all__' #рекомендується прописати всі =[ 'title', 'content', 'category']
+        fields = 'title', 'content', 'category' #'__all__'рекомендується прописати всі =[ 'title', 'content', 'category']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows':6}),
             'category': forms.Select(attrs={'class': 'form-control'})
         }
 
-    def clean_title(self):
-        title = self.cleaned_data['title']
-        if re.match(r'\d',title):
-            raise ValidationError('назва статті не повинна починатися з цифри')
+    # def clean_title(self):
+    #     title = self.cleaned_data['title']
+    #     if re.match(r'\d',title):
+    #         raise ValidationError('назва статті не повинна починатися з цифри')

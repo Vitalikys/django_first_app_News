@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-
+.
 {% block card_news_container %}
     <h3>👣 Few examples from bootstrap 🌹 </h3>
+    <h4>#/admin >  user: admin       passw: admin</h4>
     <p>A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
     <span id="time"> </span>
     <div class="container col-md-4">
@@ -69,4 +70,88 @@
             <p class="card-text"><small class="text-muted">Last updated 46 mins ago</small></p>
         </div>
     </div>
+
+        <div class="page">
+        <p>Правая угловая скобка > обозначает вложенность на первом уровне. Пример:</p>
+        <div class="quote">
+            <p>
+                Этот селектор применится ко всем '< p \, которые находятся внутри элемента с классом page на первом
+                    уровне вложенности. </p>
+        </div>
+    </div>
+    <!-- textarea pos: absolute -->
+    <div>
+        <Textarea class="for_del_page">Textarea tag; position: absolute top: 20%;
+            right: 20%;</Textarea>
+    </div>
+
+    <!-- bootstrap Input BS5 position:sticky -->
+    <div class="input-name">
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Input BS5 position:sticky</span>
+            <input type="text" class="form-control" aria-label= "Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+    </div>
+
+
+    <!-- content : расположения и позиционирования элементов -->
+    <div>
+        <h5>Обзор доступных средств для расположения и позиционирования элементов на странице HTML с помощью CSS (CSS
+            layout):</h5>
+        <ol>
+            <li>    <a href="https://flexboxfroggy.com/#uk", target="_blank">flexboxfroggy.com</a> = game </li>
+            <li style="color: rgb(49, 15, 15);">The normal flow.
+                Все элементы распологаются на <img class="img1" src="https://picsum.photos/200/200?random=1">странице последовательно, в том порядке, в котором они записаны в HTML.
+                Браузер размещает элементы страницы поочередно, сверху вниз, согласно блочной модели, учитывая margin-ы
+                и
+                padding-и.
+                Это называется нормальный (обычный) поток.
+                Подводные канми: "схлопывание" отступов.</li>
+            <li>Переполнение контента.  <b>Overflow.</b>
+                Когда контент выходит за ширину или высоту родительского блока-контейнера, могут появиться полосы
+                прокрутки.
+                Настраивается с помощью overflow.</li>
+            <li>
+                <em style="font-size: 25px;">Свойство float.</em>
+                "Плавающий" элемент (float : right; или float: left;)
+                вынимается из потока и "прижимается" ("притягивается", "плывёт") к левой или правой стороне содержащего
+                блока. Поток всё также идет от самого верха родительского элемента-контейнера, но ширина потока
+                уменьшается
+                на ширину плавающего элемента.
+                После "плавающего" элемента поток опять займёт всю доступную ширину.
+
+                Если элементы, которые обтекают вокруг float-элемента, меньше по высоте, то следующие за ними элементы
+                продолжат "обтекать" float-элемент.
+                Чтобы предотвратить обтекание, нужно для этих элементов установить свойство clear как right или left (не
+                позволяет элементу обтекать другие с правой или с левой стороны) или both (с обеих сторон).
+                По умолчанию все элементы будут обтекать float-ы, свойство clear имеет значение по умолчанию clear:
+                none; -
+                отключено.
+
+                Если в блоке-контейнере нет элементов кроме плавающих (как в первом примере из предыдущего урока) его
+                высота
+                равна нулю, контейнер ведет себя как пустой, потому что плавающие элементы удалены из потока.
+                Чтобы контейнер не схлопывался в него добавляют пустой элемент со свойством clear: both;, его высота
+                тоже -
+                "0", но он не может обтекать плавающий элемент и будет расположен после него, таким образом контейнер
+                растянется.
+                All About Floats | CSS-Tricks</li>
+                <img src="https://picsum.photos/200/200?random=2">
+
+                <li>position: static означает, что элемент появляется в документе на своем обычном месте, то есть в том же порядке, как и в html-разметке.
+
+                    position: relative позволяет вам использовать свойства: top, bottom, left и right, для расположения элемента относительно того места, где бы он появился при обычном позиционировании (например, на 20 пикселей вниз, и на 40 пикселей влево)
+
+                    position: absolute элемент удаляется из документа, и появляется там, где вы ему скажете (например, верхний, правый угол страницы)
+
+                    position: fixed является подразделом абсолютного позиционирования. Его отличие в том, что он всегда находится в видимой области экрана, и не двигается во время прокрутки страницы. </li>
+                <li><img src="https://ucarecdn.com/8398efbf-b77e-43d8-a07e-43d50f971a6c/" alt=""></li>
+        </ol>
+    </div>
+
+
+    <footer>
+        <p>© 2022 footer position: fixed;</p>
+    </footer>
 {% endblock %}

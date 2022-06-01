@@ -1,13 +1,16 @@
 #https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/
 # in file.html  need to import this file
 from django import template
+from django.db.models import Count
+
 from blog.models import Category
 
 register = template.Library()
 
 @register.simple_tag(name='get_list_categories')
 def get_categories():
-    return Category.objects.all()
+    categories = Category.objects.annotate(cnt= Count('news')).filter(cnt__gt=0)
+    return categories
 
 @register.inclusion_tag('blog/list_categor_inclusion_tag.html')
 def show_categories(arg = 'same menu ver.inclusion_Tag:'):
