@@ -12,7 +12,12 @@ footer{
     text-align: center;
 
 }
-
+.pagin_list{
+/*position: center;*/
+/*}*/
+    display: flex;
+    align-items: flex-end
+}
 
 
 /*for_delete.html*/
@@ -25,7 +30,7 @@ footer{
 }
 .img1{
     /* "Плавающий" элемент вынимается из потока и "прижимается" */
-    float: inline-end;
+    float: left;
     margin: 20px;
 }
 

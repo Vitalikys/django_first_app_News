@@ -1,15 +1,73 @@
+from django.contrib import messages
+# from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView
+from django.core.mail import send_mail
 
-from .forms import NewsForm
+from .forms import NewsForm, UserRegisterForm, UserLoginForm, ContactFormMail
 from .models import News, Category  # беремо таблицю
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .utils import MyMixin
+from django.core.paginator import Paginator
 
-class HomeNews(MyMixin, ListView):
+def register(request):
+    if request.method =='POST':  #приймаємо дані з форми
+ # form = UserCreationForm(request.POST) replace to .forms-> UserRegisterForm
+ #  можна залишити без створення в формі
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # щоб зразу зайти після реєстрацї
+            messages.success(request, 'Registation success !')
+            return redirect('home')
+        else:
+            messages.error(request, 'Error of registration')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'blog/register.html', {'form': form})
+
+
+def send_mail_test(request):
+    if request.method == 'POST':
+        form = ContactFormMail(request.POST)
+        if form.is_valid():
+            mail = send_mail(form.cleaned_data['subject'], form.cleaned_data['content'], 'gonevich91@ukr.net', ['vitalikys87@i.ua'], fail_silently=False)
+            if mail:
+                messages.success(request, 'Mail success !!)')
+                return redirect('send_mail_test')
+            else:
+                messages.error(request, 'oops, got send error')
+        else:
+            messages.error(request, 'Помилка валідації')
+    else:
+        form = ContactFormMail()
+    return render(request, 'blog/send_mail_test.html', {'form':form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserLoginForm()
+    return render(request, 'blog/login.html', {'form': form})
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
+
+
+# https://docs.djangoproject.com/en/4.0/topics/pagination/
+class HomeNews(MyMixin, ListView):      # Контроллери class a
     model = News
     mixin_prop = 'hello world'
+    paginate_by = 3  # set number of items for pages/
+    # queryset = News.objects.select_related('category')  те саме що знизу
     # template_name = news_list.html  it's-default.   we can create -'any_my.html'
     # context_object_name = 'news' variable for use instead default=object_list
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -19,9 +77,12 @@ class HomeNews(MyMixin, ListView):
         return context
 
     def get_queryset(self):
-        return News.objects.filter(is_published=True)
+        return News.objects.filter(is_published=True).select_related('category')
+# .select_related() жадно загружає добавляємо щоб менше SQL запросів було на сторінці
+#  працює з ForeignKey -model
+# .prefetch_related()  - ManyToMany
 
-# def index(request):
+# def index(request):  # Контроллери функцфї
 #     #news = News.objects.all()
 #     news = News.objects.order_by('-created_at')
 #     #categories = Category.objects.all()
@@ -40,13 +101,14 @@ class NewsByCategor(ListView):
     model = News
     template_name = 'blog/news_list.html'  # default var =object_list
     allow_empty = False # to disable NULL categories in list
+    paginate_by = 3  # set number of items for pages/
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = Category.objects.get(pk= self.kwargs['category_id'])  # make sign on tab
         return context
     def get_queryset(self):
-        return News.objects.filter( category_id= self.kwargs['category_id'] , is_published=True)
+        return News.objects.filter( category_id= self.kwargs['category_id'] , is_published=True).select_related('category')
 
 # def get_category(request, category_id):
 #     news= News.objects.filter(category_id = category_id)

@@ -3,6 +3,10 @@ from .views import *
 
 
 urlpatterns = [
+    path('register/', register, name = 'register'),
+    path('login/', user_login, name = 'login'),
+    path('send_mail_test/', send_mail_test, name = 'send_mail_test'),
+    path('logout/', user_logout, name = 'logout'),
     # path('', index, name='home'),
     path('', HomeNews.as_view(), name='home'),
     path('article/home_alt/', HomeAltGrid.as_view(), name='home_altern_grid'),

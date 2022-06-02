@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
-.
+
+{% block title %}
+    Test page-for delete :{{ block.super }}
+{% endblock %}
+
 {% block card_news_container %}
+
     <h3>👣 Few examples from bootstrap 🌹 </h3>
     <h4>#/admin >  user: admin       passw: admin</h4>
     <p>A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
@@ -60,16 +65,6 @@
     <h5>Image caps Similar to headers and footers, cards can include top and bottom
         “image caps”—images at the top or bottom of a card.</h5>
 
-
-    <div class="card mb-3 col-md-6">
-        <img src="https://picsum.photos/300/100?grayscale" class="card-img-top" alt="..Phooto.">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 46 mins ago</small></p>
-        </div>
-    </div>
 
         <div class="page">
         <p>Правая угловая скобка > обозначает вложенность на первом уровне. Пример:</p>
@@ -151,7 +146,15 @@
     </div>
 
 
-    <footer>
-        <p>© 2022 footer position: fixed;</p>
-    </footer>
+        <div class="card mb-3 col-md-4" style="height: 400px">
+        <img src="https://picsum.photos/300/100?grayscale" class="card-img-top" alt="..Phooto.">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 46 mins ago</small></p>
+        </div>
+    </div>
+
+
 {% endblock %}

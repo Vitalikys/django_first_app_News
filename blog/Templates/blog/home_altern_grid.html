@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }}:{{ block.super }} {% endblock %}
+
+{% block sidebar %}
+    {% include 'blog/list_categories.html' %}
+{% endblock %}
+
+{#{% block card_news_container %}#}
+{#  <div class="list-group col-md-9">#}
+{#                {% for product in object_list %}#}
+{#					<div class="col-3 col-lg-3 col-md-3 item">#}
+{#                        <div class="card" style="width: 12rem;">#}
+{#                            <form method="post" action="">#}
+{#                                <img src="https://picsum.photos/id/1011/350/235" class="card-img-top" alt="...">#}
+{#                                <div class="card-body">#}
+{#                                    <h5 class="card-title"><b>{{ product.title}}</b></h5>#}
+{#                                    <p class="card-text">#}
+{#                                        {{ product.content | truncatechars:50}}#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                                <ul class="list-group list-group-flush">#}
+{#                                    <li class="list-group-item">Price: {{ product.price }}</li>#}
+{##}
+{#                                </ul>#}
+{#                                <div class="card-body">#}
+{#                                    <button class="learn-more-btn" type="submit">buy now</button>#}
+{#                                    <a class="contactus-bar-btn f_right" href="">detail</a>#}
+{#                                    <br><br>#}
+{#                                </div>#}
+{#                            </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#  </div>#}
+{#{% endblock %}#}
+
+
+
+
+{% block card_news_container %}
+<div class="col-md-9">
+        {% for object in object_list %}
+            <div class="col-3 col-lg-3 col-md-3">
+            <div class="card" style=" width: 13rem;margin: 20px;">
+                {% if object.photo %}
+                    <img src="{{ object.photo.url }}" title="{{ object.photo.url }}" alt="{{ object.photo.url }}"
+                         width="250" class="float-left mr-3 ">
+                {% else %}
+                    <img src="https://picsum.photos/id/1011/350/235" title="default_photo" alt="фото заглушка"
+                         width="250" class="float-left mr-3">
+                {% endif %}
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ object.title }}</h5>
+                    <p class="card-text">{{ object.content|truncatechars:40 }}</p>
+                    <a href="{{ object.get_absolute_url }}" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+
+</div>
+
+{% endblock %}

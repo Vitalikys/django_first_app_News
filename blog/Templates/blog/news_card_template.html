@@ -1,7 +1,7 @@
 {# container  for cycle for each NEW #}
-<div class="col-md-9">
-    {% now "Y-E-d H:i:s" %}
-    <t1>; news count=</t1>
+{#<div class="col-md-9">#}
+{#    {% now "Y-E-d H:i:s" %}   Show Current Time #}
+{#    <t1>; news count=</t1>#}
     {{ news.count }}
     {% for item in object_list %}
 {#    {% for item in news reversed %} object_list не описуємо, то default   #}
@@ -11,7 +11,7 @@
 {#        </style>#}
             <div class="card mb-3">
                 <div class="card-header">
-                    {#                        {{ forloop.counter }} # задає нумерацію#}
+                    {#   {{ forloop.counter }} # задає нумерацію#}
                     Category: <a href="{% url 'category' item.category.pk %}"> {{ item.category }}</a>
                 </div>
                 <div class="card-body">
@@ -40,4 +40,4 @@
             </div>
         </div>
     {% endfor %}
-</div>
+{#</div>#}

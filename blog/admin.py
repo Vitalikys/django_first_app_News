@@ -27,4 +27,6 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(News, NewsAdmin)
 admin.site.register(Category, CategoryAdmin)
 
+admin.site.site_title = 'Керування сайтом новин'
+admin.site.site_header = 'Керування сайтом новин'
 # Register your models here.
