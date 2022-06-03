@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yog8+k-7gd4+j3*1q=*bmwc#y!3^e%9^n4t2qr(51bvo33+cab'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['<url>']
 
 # Application definition
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,6 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'ciba',
     }
 }
 
@@ -118,6 +123,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # будемо все скида
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blogengine\static')
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'  # way to download
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -131,7 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = ['127.0.0.1']
 
 EMAIL_HOST = 'smtp.ukr.net'
-EMAIL_PORT = 465 #2525 #465
+EMAIL_PORT = 465  # 2525 #465
 EMAIL_HOST_USER = 'gonevich91@ukr.net'
 EMAIL_HOST_PASSWORD = 'OwVFOEwcLVyaJG9I'
 EMAIL_USE_TLS = False
@@ -139,4 +145,6 @@ EMAIL_USE_SSL = True
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
 CAPTCHA_NOISE_FUNCTIONS = None
-CAPTCHA_FONT_SIZE  = 28
+CAPTCHA_FONT_SIZE = 28
+
+django_heroku.settings(locals())
