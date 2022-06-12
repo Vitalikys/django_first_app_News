@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yog8+k-7gd4+j3*1q=*bmwc#y!3^e%9^n4t2qr(51bvo33+cab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['<url>']
+ALLOWED_HOSTS = ['<url>', '.herokuapp.com']
 
 # Application definition
 
@@ -73,7 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blogengine.wsgi.application'
-
+CSRF_TRUSTED_ORIGINS = ["https://newskost.herokuapp.com"]
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
