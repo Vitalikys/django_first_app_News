@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yog8+k-7gd4+j3*1q=*bmwc#y!3^e%9^n4t2qr(51bvo33+cab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['<url>','.herokuapp.com']
+ALLOWED_HOSTS = ['<url>','.herokuapp.com','newskost.herokuapp.com']
 
 
 LOGGING = {
@@ -68,7 +68,6 @@ LOGGING = {
     }
 }
 
-ALLOWED_HOSTS = ['<url>', '.herokuapp.com']
 
 
 # Application definition
@@ -103,7 +102,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'Templates')
+                    'blog/templates','blog/Templates', 'blog/Templates/blog'
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,7 +124,7 @@ CSRF_TRUSTED_ORIGINS = ["https://newskost.herokuapp.com"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': 'ciba',
     }

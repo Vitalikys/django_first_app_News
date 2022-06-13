@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogengine/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,6 +252,7 @@
       <workItem from="1654235908318" duration="2109000" />
       <workItem from="1654238678503" duration="2164000" />
       <workItem from="1655118416536" duration="289000" />
+      <workItem from="1655146191229" duration="2348000" />
     </task>
     <task id="LOCAL-00001" summary="up to lesson 43 by &#10;Proger course (Tube)">
       <created>1654102077317</created>
