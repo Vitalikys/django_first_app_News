@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/Templates/blog/scraping.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/bs4_news_scraping.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/migrations/0004_auto_20220613_2309.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogengine/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +300,7 @@
       <workItem from="1655156109686" duration="108000" />
       <workItem from="1655203248574" duration="9530000" />
       <workItem from="1655221643127" duration="9390000" />
-      <workItem from="1655236104839" duration="3590000" />
+      <workItem from="1655236104839" duration="3915000" />
     </task>
     <task id="LOCAL-00001" summary="up to lesson 43 by &#10;Proger course (Tube)">
       <created>1654102077317</created>
