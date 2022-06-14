@@ -2,6 +2,7 @@
 {#<div class="col-md-9">#}
 {#    {% now "Y-E-d H:i:s" %}   Show Current Time #}
 {#    <t1>; news count=</t1>#}
+{% load hitcount_tags %}
     {{ news.count }}
     {% for item in object_list %}
 {#    {% for item in news reversed %} object_list не описуємо, то default   #}
@@ -35,7 +36,7 @@
                 {#                        # робить різними кольорами текст по черзі, в циклі#}
 
                 <div class="card-footer text-muted">
-                    {{ item.created_at|date:"Y-m-d H:i:s" }},  views :{{ item.views }}
+                    {{ item.created_at|date:"Y-m-d H:i:s" }}, <p>Views: {% get_hit_count for item %}</p>
                 </div>
             </div>
         </div>

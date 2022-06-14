@@ -20,5 +20,6 @@ urlpatterns = [
     path('article/add-news', CreateNews.as_view(), name= 'add_news'),
 
     path('article/extra_del', for_delete, name= 'for_delete'),
+    path('article/scraping', scraping, name= 'scraping'),
 
 ]

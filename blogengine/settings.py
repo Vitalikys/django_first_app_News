@@ -79,9 +79,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'debug_toolbar',
     'blog.apps.BlogConfig',
     'captcha',
+    'hitcount',
 ]
 
 MIDDLEWARE = [

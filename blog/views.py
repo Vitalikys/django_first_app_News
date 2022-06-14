@@ -5,12 +5,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView
 from django.core.mail import send_mail
+from hitcount.views import HitCountDetailView
 
 from .forms import NewsForm, UserRegisterForm, UserLoginForm, ContactFormMail
 from .models import News, Category  # беремо таблицю
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .utils import MyMixin
 from django.core.paginator import Paginator
+from blog.bs4_news_scraping import scraping_fun, ScrapingError
 
 def register(request):
     if request.method =='POST':  #приймаємо дані з форми
@@ -116,10 +118,11 @@ class NewsByCategor(ListView):
 #     return render(request, 'blog/index.html', {'news':news, 'category':categor})
 # # Create your views here.
 
-class ViewNews(DetailView):
+class ViewNews(HitCountDetailView):
     model = News
     # pk_url_kwarg = 'news_id'
     template_name = 'blog/article_one_news.html'
+    count_hit = True
 # def get_article(request, news_id):  # news_id беремо з urls.} get one news
 #     news_item = News.objects.get(pk=news_id)
 #     return render(request, 'blog/article_one_news.html', {'news_item':news_item })
@@ -148,3 +151,13 @@ class CreateNews(LoginRequiredMixin, CreateView):
 
 def for_delete( request):
     return render(request, 'blog/for_delete.html')
+
+def scraping(request):
+    if request.method == 'POST' and request.user.is_staff:
+        try:
+            scraping_fun()
+        except ScrapingError as err:
+            print(str(err))
+            return render(request, 'blog/scraping.html', {'message': str(err)})
+    return render(request, 'blog/scraping.html', {'message': None})
+

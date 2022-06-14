@@ -1,3 +1,5 @@
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCountMixin, HitCount
 from django.db import models
 from django.urls import reverse
 # all info from:
@@ -5,7 +7,7 @@ from django.urls import reverse
 # Create your models here.
 
 
-class News(models.Model):
+class News(models.Model, HitCountMixin):
     title= models.CharField(max_length=150 ) #verb_name  is for admin.site
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата створення')
@@ -15,6 +17,9 @@ class News(models.Model):
     is_published  =models.BooleanField(default=True)
     category = models.ForeignKey('Category', on_delete=models.PROTECT)
     views = models.IntegerField(default=0)
+    hit_count_generic = GenericRelation(
+        HitCount, object_id_field='object_pk',
+        related_query_name='hit_count_generic_relation')
 
     def get_absolute_url(self):
         return reverse('article_detail_url', kwargs={'pk':self.pk})
