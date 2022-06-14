@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="" />
+    <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +303,7 @@
       <workItem from="1655156109686" duration="108000" />
       <workItem from="1655203248574" duration="9530000" />
       <workItem from="1655221643127" duration="9390000" />
-      <workItem from="1655236104839" duration="3915000" />
+      <workItem from="1655236104839" duration="5730000" />
     </task>
     <task id="LOCAL-00001" summary="up to lesson 43 by &#10;Proger course (Tube)">
       <created>1654102077317</created>
