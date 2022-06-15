@@ -112,17 +112,22 @@ class NewsByCategor(ListView):
     def get_queryset(self):
         return News.objects.filter( category_id= self.kwargs['category_id'] , is_published=True).select_related('category')
 
-# def get_category(request, category_id):
-#     news= News.objects.filter(category_id = category_id)
-#     categor = Category.objects.get(pk = category_id)
-#     return render(request, 'blog/index.html', {'news':news, 'category':categor})
-# # Create your views here.
+'''def get_category(request, category_id):
+    news= News.objects.filter(category_id = category_id)
+    categor = Category.objects.get(pk = category_id)
+    return render(request, 'blog/index.html', {'news':news, 'category':categor})
+'''
 
 class ViewNews(HitCountDetailView):
     model = News
     # pk_url_kwarg = 'news_id'
     template_name = 'blog/article_one_news.html'
     count_hit = True
+    def get_object(self): # count views+1
+        obj = super().get_object()
+        obj.views +=1
+        obj.save()
+        return obj
 # def get_article(request, news_id):  # news_id беремо з urls.} get one news
 #     news_item = News.objects.get(pk=news_id)
 #     return render(request, 'blog/article_one_news.html', {'news_item':news_item })
@@ -135,20 +140,21 @@ class CreateNews(LoginRequiredMixin, CreateView):
     # raise_exception = True   # exeption = if not authorized
 
 # https://djbook.ru/rel3.0/topics/forms/index.html
-# def add_news(request):
-#     if request.method == 'POST':
-#         form= NewsForm(request.POST) # забираємо дані
-#         if form.is_valid():
-#             # print(form.cleaned_data) dict
-#             #News.objects.create(**form.cleaned_data) # це якщо прописуємо форму вручну
-#             # якщо Meta: model = News fields = '__all__ то просто: form.save()
-#             news_new = form.save()
-#             return redirect(news_new)
-#             #return redirect('home')
-#     else:
-#         form = NewsForm() #створ екземпл пустої форми
-#     return render(request, 'blog/add_news.html', {'form':form} )
-
+'''
+def add_news(request):
+    if request.method == 'POST':
+        form= NewsForm(request.POST) # забираємо дані
+        if form.is_valid():
+            # print(form.cleaned_data) dict
+            #News.objects.create(**form.cleaned_data) # це якщо прописуємо форму вручну
+            # якщо Meta: model = News fields = '__all__ то просто: form.save()
+            news_new = form.save()
+            return redirect(news_new)
+            #return redirect('home')
+    else:
+        form = NewsForm() #створ екземпл пустої форми
+    return render(request, 'blog/add_news.html', {'form':form} )
+'''
 def for_delete( request):
     return render(request, 'blog/for_delete.html')
 

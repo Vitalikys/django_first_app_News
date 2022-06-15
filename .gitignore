@@ -19,7 +19,7 @@ __pycache__/
 *$py.class
 
 # If you are using PyCharm #
-# User-specific stuff
+# User-specific stuff position of windows
 .idea/workspace.xml
 .idea/**/workspace.xml
 .idea/**/tasks.xml

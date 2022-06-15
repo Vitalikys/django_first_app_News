@@ -14,7 +14,7 @@
         width="350" class="col-md-5 mr-3">
     {% endif %}
     {{ object.content |linebreaksbr }}</p>
-{#    <h5> number of views:{{ object.views }}</h5>#}
-    <p>Views: {% get_hit_count for object %}</p>
+    <p>views += {{ object.views }}</p>
+    <p>HitCountDetalView: {% get_hit_count for object %}</p>
 
 {% endblock %}

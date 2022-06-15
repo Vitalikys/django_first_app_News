@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -303,7 +306,10 @@
       <workItem from="1655156109686" duration="108000" />
       <workItem from="1655203248574" duration="9530000" />
       <workItem from="1655221643127" duration="9390000" />
-      <workItem from="1655236104839" duration="5730000" />
+      <workItem from="1655236104839" duration="6327000" />
+      <workItem from="1655246828088" duration="894000" />
+      <workItem from="1655294979566" duration="1855000" />
+      <workItem from="1655303590824" duration="1544000" />
     </task>
     <task id="LOCAL-00001" summary="up to lesson 43 by &#10;Proger course (Tube)">
       <created>1654102077317</created>

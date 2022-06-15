@@ -36,7 +36,7 @@
                 {#                        # робить різними кольорами текст по черзі, в циклі#}
 
                 <div class="card-footer text-muted">
-                    {{ item.created_at|date:"Y-m-d H:i:s" }}, <p>Views: {% get_hit_count for item %}</p>
+                    {{ item.created_at|date:"Y-m-d H:i:s" }}, <p>Views+= {{ item.views }}; HitCountDetalView: {% get_hit_count for item %}</p>
                 </div>
             </div>
         </div>
