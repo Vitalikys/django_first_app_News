@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03ef65e3-a5bb-4656-b5ff-b09c88eea23f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/article_one_news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/Templates/blog/news_card_template.html" afterDir="false" />
@@ -199,29 +200,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="blogengine" type="Python.DjangoServer" factoryName="Django server">
-      <module name="blogengine" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.bs4_news_scraping" />
@@ -309,7 +287,7 @@
       <workItem from="1655236104839" duration="6327000" />
       <workItem from="1655246828088" duration="894000" />
       <workItem from="1655294979566" duration="1855000" />
-      <workItem from="1655303590824" duration="1544000" />
+      <workItem from="1655303590824" duration="2247000" />
     </task>
     <task id="LOCAL-00001" summary="up to lesson 43 by &#10;Proger course (Tube)">
       <created>1654102077317</created>
