@@ -6,7 +6,11 @@
 
 
 {% block card_news_container %}
-    <h4>Add news from site portal.lviv.ua </h4>
+    <h5>Скачуємо новини з сайту <a href="https://portal.lviv.ua/">portal.lviv.ua</a> , для наповнення контентом наш сайт новин.
+        <br> Завантажуємо з допомогою BeautifulSoup4 тільки 4 новини.
+        <br> Зображення не вдається стягнути нормально, потрібно пофіксити або добавляти через адмін
+        <br> підключення через Celery ще не готове повністю
+    </h5>
     <form method="post" action="{% url 'scraping' %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-success">try scraping)</button>

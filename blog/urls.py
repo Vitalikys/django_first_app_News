@@ -9,7 +9,6 @@ urlpatterns = [
     path('logout/', user_logout, name = 'logout'),
     # path('', index, name='home'),
     path('', HomeNews.as_view(), name='home'),
-    path('article/home_alt/', HomeAltGrid.as_view(), name='home_altern_grid'),
     # path('category/<int:category_id>/', get_category, name='category'),
     path('category/<int:category_id>/', NewsByCategor.as_view(), name='category'),
 
@@ -20,6 +19,10 @@ urlpatterns = [
     path('article/add-news', CreateNews.as_view(), name= 'add_news'),
 
     path('article/extra_del', for_delete, name= 'for_delete'),
+
+    # path('article/delete/<int:id>', delete_one_new, name= 'delete_one'),
+    path('article/<int:pk>/delete/', delete_one_new, name= 'delete_one'),
     path('article/scraping', scraping, name= 'scraping'),
+
 
 ]

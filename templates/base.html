@@ -21,8 +21,8 @@
 
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="{% url 'home' %}">Новини</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <a class="nav-link" href="{% url 'home' %}"> Головна</a>
             <a class="nav-link" href="{% url 'add_news' %}"> Добавити новину</a>
             {#               hide link if user is logined  #}
             {% if request.user.is_authenticated %}
                 <a class="nav-link" href="{% url 'for_delete' %}"> extra</a>
-                <a class="nav-link" href="{% url 'home_altern_grid' %}"> home-alt</a>
                 <a class="nav-link" href="{% url 'send_mail_test' %}"> @mail_us</a>
                 <a class="nav-link" href="{% url 'scraping' %}">scrap</a>
             {% endif %}

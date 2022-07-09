@@ -1,8 +1,11 @@
 from django.contrib import messages
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout
-from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView
 from django.core.mail import send_mail
 from hitcount.views import HitCountDetailView
@@ -66,6 +69,7 @@ def user_logout(request):
 
 # https://docs.djangoproject.com/en/4.0/topics/pagination/
 class HomeNews(MyMixin, ListView):      # Контроллери class a
+    ''' Головна сторінка, список всіх новин'''
     model = News
     mixin_prop = 'hello world'
     paginate_by = 3  # set number of items for pages/
@@ -94,12 +98,8 @@ class HomeNews(MyMixin, ListView):      # Контроллери class a
 #     return render(request, template_name='blog/index.html', context=context )
 #     #return HttpResponse('<h1> Hello wolrd</h1>')
 
-class HomeAltGrid(ListView):
-    model = News
-    template_name = 'blog/home_altern_grid.html'
-
-
 class NewsByCategor(ListView):
+    ''' Головна сторінка, фільтр новин по категоріях'''
     model = News
     template_name = 'blog/news_list.html'  # default var =object_list
     allow_empty = False # to disable NULL categories in list
@@ -119,6 +119,7 @@ class NewsByCategor(ListView):
 '''
 
 class ViewNews(HitCountDetailView):
+    ''' Одна новина детальний огляд '''
     model = News
     # pk_url_kwarg = 'news_id'
     template_name = 'blog/article_one_news.html'
@@ -134,6 +135,7 @@ class ViewNews(HitCountDetailView):
 
 
 class CreateNews(LoginRequiredMixin, CreateView):
+    '''добавлення новини з сторінки'''
     form_class = NewsForm
     template_name = 'blog/add_news.html'
     login_url = '/admin/'  # redirect if not authorized
@@ -156,14 +158,36 @@ def add_news(request):
     return render(request, 'blog/add_news.html', {'form':form} )
 '''
 def for_delete( request):
+    ''' проста сторінка для всякого непотребу, можна видалити '''
     return render(request, 'blog/for_delete.html')
 
 def scraping(request):
+    ''' сторінка для парсингу новин з сайту Львів_Портал, скачує 4шт новини'''
     if request.method == 'POST' and request.user.is_staff:
         try:
             scraping_fun()
+            messages.success(request, 'Добавлeння новин пройшло успішно !!)')
         except ScrapingError as err:
             print(str(err))
             return render(request, 'blog/scraping.html', {'message': str(err)})
     return render(request, 'blog/scraping.html', {'message': None})
 
+
+@login_required(login_url=reverse_lazy('login'))
+def delete_one_new(request,pk):
+    ''' видалення одної новини '''
+    obj = get_object_or_404(News, id=pk)
+    if  request.method == "POST":
+        obj.delete()
+        messages.success(request, 'Видалення статті успішне.)')
+        return redirect('home')
+    return render(request, 'blog/deleting_one_article_form.html', {'obj':obj})
+
+'''
+@login_required(login_url=reverse_lazy('login'))
+def delete_one_new(request,id):
+   # видалення одної новини без переходу на форму підтвердження, зразу з home      
+    obj = get_object_or_404(News, id=id)
+    obj.delete()
+    return redirect('home')
+'''
