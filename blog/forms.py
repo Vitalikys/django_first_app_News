@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from captcha.fields import CaptchaField
 
-from .models  import News
+from .models import News, Reviews
 import re
 # https://djbook.ru/rel3.0/topics/forms/index.html
 
@@ -43,7 +43,7 @@ class NewsForm(forms.ModelForm):
 
 class ContactFormMail(forms.Form):
     subject = forms.CharField(label='Тема', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    content = forms.CharField(label='Текст повідомлення', widget=forms.Textarea(attrs={'class':'form-control', "rows":6}))
+    content = forms.CharField(label='Текст повідомлення', widget=forms.Textarea(attrs={'class':'form-control', "rows":3}))
     captcha = CaptchaField()  #https://django-simple-captcha.readthedocs.io/en/latest/usage.html
 
 '''
@@ -51,3 +51,14 @@ def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.pop('autofocus')
 уберёт автофокус'''
+
+class ReviewForm(forms.ModelForm):
+    """Форма Відгуків"""
+    class Meta:
+        model = Reviews
+        fields = ("name", "email", "text")
+        widgets = {
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "email": forms.EmailInput(attrs={"class": "form-control"}),
+            "text": forms.Textarea(attrs={"class": "form-control border", 'rows':3})
+        }

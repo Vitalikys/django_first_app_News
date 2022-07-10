@@ -28,6 +28,9 @@ class News(models.Model, HitCountMixin):
     def __str__(self):
         return self.title
 
+    def get_review(self):
+        return self.reviews_set.filter(parent__isnull=True)
+
     # добавляємо щоб в AдмінЦі було нормально підписано, так як ми задамо
     class Meta:
         verbose_name= 'Новина'
@@ -45,3 +48,22 @@ class Category(models.Model):
     class Meta:         # for admin.menu
         verbose_name= 'Категорія'
         verbose_name_plural = 'Категорії'
+
+
+class Reviews(models.Model):
+    """Отзывы"""
+    email = models.EmailField()
+    name = models.CharField("Ім'я", max_length=30)
+    text = models.TextField("Повідомлення", max_length=200)
+    parent = models.ForeignKey('self', verbose_name="Parent", on_delete=models.SET_NULL, blank=True, null=True)
+    news = models.ForeignKey(News, verbose_name="стаття", on_delete=models.CASCADE)
+    created_review_at = models.DateTimeField(verbose_name='дата відгука', auto_now_add=True)
+
+    def __str__(self):
+        return'Comment by: "{}" on: \"{}" '.format(self.name, self.news)
+
+    class Meta:
+        verbose_name = "Відгук"
+        verbose_name_plural = "Відгуки"
+        ordering = ('created_review_at',)
+

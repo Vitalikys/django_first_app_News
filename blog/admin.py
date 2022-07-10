@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import News, Category
+from .models import News, Category, Reviews
 # user: admin       passw: admin
-
+@admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('id', 'title','category', 'created_at', 'updated_at', 'is_published', 'get_photo')
     list_display_links = ('id', 'title')
@@ -24,9 +24,16 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     search_fields = ('title',) # leave , it's tuple
 
-admin.site.register(News, NewsAdmin)
+@admin.register(Reviews)
+class ReviewsAdmin(admin.ModelAdmin):
+    fields = ('email','name','text','parent','news','created_review_at')
+    list_display = ('name','text','news')
+    readonly_fields = ('news','created_review_at')
+    search_fields = ('text',)
+
+
 admin.site.register(Category, CategoryAdmin)
 
-admin.site.site_title = 'Керування сайтом новин'
-admin.site.site_header = 'Керування сайтом новин'
+admin.site.site_title = 'новинa Title admin'
+admin.site.site_header = 'Керування сайтом новин Site headere'
 # Register your models here.

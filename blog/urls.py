@@ -23,6 +23,7 @@ urlpatterns = [
     # path('article/delete/<int:id>', delete_one_new, name= 'delete_one'),
     path('article/<int:pk>/delete/', delete_one_new, name= 'delete_one'),
     path('article/scraping', scraping, name= 'scraping'),
+    path("article/review/<int:pk>/", AddReview.as_view(), name="add_review"),
 
 
 ]
